@@ -52,6 +52,15 @@
     footer { background: var(--texto); color: #c9d4db; padding: 28px 0; font-size: .9rem; }
     footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
 
+    .sede .sin-mapa { height: 220px; border-radius: 10px; background: #f3f7fa; display: flex; align-items: center; justify-content: center; text-align: center; padding: 16px; color: var(--suave); font-size: .9rem; }
+    footer a { color: #c9d4db; margin-right: 14px; }
+    .cookies { position: fixed; left: 16px; right: 16px; bottom: 16px; max-width: 560px; margin: 0 auto; background: #fff; border: 1px solid var(--borde); border-radius: 14px; box-shadow: 0 8px 30px rgba(0,0,0,.15); padding: 18px; z-index: 20; display: none; }
+    .cookies p { color: var(--suave); font-size: .92rem; margin-bottom: 12px; }
+    .cookies a { color: var(--azul); }
+    .cookies button { padding: 9px 18px; border-radius: 999px; border: 1px solid var(--azul); font-weight: 600; cursor: pointer; margin-right: 8px; }
+    .cookies .ok { background: var(--azul); color: #fff; }
+    .cookies .no { background: #fff; color: var(--azul); }
+
     @media (max-width: 640px) { nav { display: none; } .hero { padding: 48px 0 56px; } section { padding: 48px 0; } }
   </style>
 </head>
@@ -99,13 +108,13 @@
         <div class="card sede">
           <h3>📍 Sede Av. Palmas</h3>
           <p>Calle 8 # 21-45, Fusagasugá</p>
-          <iframe loading="lazy" title="Mapa Sede Av. Palmas" src="https://maps.google.com/maps?q=Calle%208%20%2321-45%2C%20Fusagas%C3%BAg%C3%A1%2C%20Cundinamarca&output=embed"></iframe>
+          <iframe loading="lazy" title="Mapa Sede Av. Palmas" data-src="https://maps.google.com/maps?q=Calle%208%20%2321-45%2C%20Fusagas%C3%BAg%C3%A1%2C%20Cundinamarca&output=embed"></iframe>
           <a class="link" href="https://www.google.com/maps/search/?api=1&query=Calle+8+%2321-45+Fusagasug%C3%A1" target="_blank" rel="noopener">Cómo llegar →</a>
         </div>
         <div class="card sede">
           <h3>📍 Sede Centro</h3>
           <p>Carrera 8 # 9-35, Fusagasugá</p>
-          <iframe loading="lazy" title="Mapa Sede Centro" src="https://maps.google.com/maps?q=Carrera%208%20%239-35%2C%20Fusagas%C3%BAg%C3%A1%2C%20Cundinamarca&output=embed"></iframe>
+          <iframe loading="lazy" title="Mapa Sede Centro" data-src="https://maps.google.com/maps?q=Carrera%208%20%239-35%2C%20Fusagas%C3%BAg%C3%A1%2C%20Cundinamarca&output=embed"></iframe>
           <a class="link" href="https://www.google.com/maps/search/?api=1&query=Carrera+8+%239-35+Fusagasug%C3%A1" target="_blank" rel="noopener">Cómo llegar →</a>
         </div>
       </div>
@@ -127,8 +136,31 @@
   <footer>
     <div class="wrap">
       <span>© Peñaloza Odontólogos · Fusagasugá, Cundinamarca</span>
-      <span>@penaloza__odontologos</span>
+      <span><a href="legal.html#datos">Tratamiento de datos</a><a href="legal.html#cookies">Cookies</a><a href="legal.html#terminos">Términos</a></span>
     </div>
   </footer>
+
+  <div class="cookies" id="cookies" role="dialog" aria-label="Aviso de cookies">
+    <p>Usamos Google Maps para mostrar nuestras sedes, que puede instalar cookies de terceros. ¿Las aceptas? Más información en nuestra <a href="legal.html#cookies">política de cookies</a> y de <a href="legal.html#datos">tratamiento de datos</a>.</p>
+    <button type="button" class="ok" id="aceptar">Aceptar</button><button type="button" class="no" id="rechazar">Rechazar</button>
+  </div>
+  <script>
+    function leer() { try { return localStorage.getItem('cookies-consent'); } catch (e) { return null; } }
+    function guardar(v) { try { localStorage.setItem('cookies-consent', v); } catch (e) {} }
+    function aplicar(v) {
+      document.querySelectorAll('iframe[data-src]').forEach(function (f) {
+        if (v === 'si') { f.src = f.dataset.src; return; }
+        var d = document.createElement('div');
+        d.className = 'sin-mapa';
+        d.textContent = 'Mapa desactivado porque no aceptaste las cookies de Google Maps. Usa "Cómo llegar".';
+        f.replaceWith(d);
+      });
+    }
+    var c = leer(), b = document.getElementById('cookies');
+    if (c) aplicar(c); else b.style.display = 'block';
+    function decidir(v) { guardar(v); b.style.display = 'none'; aplicar(v); }
+    document.getElementById('aceptar').onclick = function () { decidir('si'); };
+    document.getElementById('rechazar').onclick = function () { decidir('no'); };
+  </script>
 </body>
 </html>
