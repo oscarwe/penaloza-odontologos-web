@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Peñaloza Odontólogos | Fusagasugá</title>
+  <meta name="description" content="Peñaloza Odontólogos: 65 años de experiencia en salud oral en Fusagasugá. Sedes Av. Palmas y Centro." />
+  <link rel="icon" href="logo.jpg" />
+  <style>
+    :root {
+      --azul: #0b4f7c; --azul-claro: #e8f3fa; --acento: #1aa3a3;
+      --texto: #1d2a33; --suave: #5b6b76; --fondo: #ffffff; --borde: #dde6ec;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: var(--texto); background: var(--fondo); line-height: 1.55; }
+    a { color: inherit; }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+
+    header { position: sticky; top: 0; background: rgba(255,255,255,.95); backdrop-filter: blur(6px); border-bottom: 1px solid var(--borde); z-index: 10; }
+    header .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 12px; }
+    .marca { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 700; color: var(--azul); }
+    .marca img { width: 40px; height: 40px; border-radius: 50%; }
+    nav a { text-decoration: none; margin-left: 18px; color: var(--suave); font-size: .95rem; }
+    nav a:hover { color: var(--azul); }
+
+    .hero { background: linear-gradient(135deg, var(--azul) 0%, #136a9e 60%, var(--acento) 100%); color: #fff; padding: 72px 0 80px; }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.15; margin-bottom: 14px; }
+    .hero p { font-size: 1.15rem; max-width: 560px; opacity: .92; }
+    .botones { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .btn { display: inline-block; padding: 12px 22px; border-radius: 999px; text-decoration: none; font-weight: 600; }
+    .btn-wa { background: #25d366; color: #fff; }
+    .btn-sec { background: rgba(255,255,255,.15); color: #fff; border: 1px solid rgba(255,255,255,.5); }
+
+    section { padding: 64px 0; }
+    h2 { font-size: 1.8rem; color: var(--azul); margin-bottom: 8px; }
+    .sub { color: var(--suave); margin-bottom: 32px; }
+    .grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .card { border: 1px solid var(--borde); border-radius: 14px; padding: 24px; background: #fff; }
+    .card h3 { color: var(--azul); margin-bottom: 6px; }
+    .card p { color: var(--suave); }
+    .icono { font-size: 1.8rem; margin-bottom: 10px; }
+
+    .alt { background: var(--azul-claro); }
+    .sede { display: flex; flex-direction: column; gap: 12px; }
+    .sede iframe { width: 100%; height: 220px; border: 0; border-radius: 10px; }
+    .sede a.link { color: var(--acento); font-weight: 600; text-decoration: none; }
+
+    .contacto { text-align: center; }
+    .contacto .botones { justify-content: center; }
+    .contacto .btn-sec { color: var(--azul); border-color: var(--azul); background: transparent; }
+
+    footer { background: var(--texto); color: #c9d4db; padding: 28px 0; font-size: .9rem; }
+    footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+
+    @media (max-width: 640px) { nav { display: none; } .hero { padding: 48px 0 56px; } section { padding: 48px 0; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <a class="marca" href="#"><img src="logo.jpg" alt="Logo Peñaloza Odontólogos" />Peñaloza Odontólogos</a>
+      <nav>
+        <a href="#servicios">Servicios</a>
+        <a href="#sedes">Sedes</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="wrap">
+      <h1>65 años de experiencia que marcan la diferencia</h1>
+      <p>Clínica dental en Fusagasugá. Encuentra todos los tratamientos que tu salud oral necesita, con tecnología y un equipo comprometido con tu sonrisa.</p>
+      <div class="botones">
+        <a class="btn btn-wa" href="https://wa.me/573115989252?text=Hola%2C%20quiero%20agendar%20una%20cita" target="_blank" rel="noopener">Agendar por WhatsApp</a>
+        <a class="btn btn-sec" href="#sedes">Ver sedes</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="servicios">
+    <div class="wrap">
+      <h2>Servicios</h2>
+      <p class="sub">Atención integral para toda la familia.</p>
+      <div class="grid">
+        <div class="card"><div class="icono">🦷</div><h3>Valoración y diagnóstico</h3><p>Revisión completa para identificar a tiempo cualquier problema de salud oral.</p></div>
+        <div class="card"><div class="icono">✨</div><h3>Limpieza dental</h3><p>Profilaxis y control periódico para mantener dientes y encías sanos.</p></div>
+        <div class="card"><div class="icono">🔬</div><h3>Escáner oral digital</h3><p>Imágenes digitales detalladas de tu boca para diagnósticos y planificación más precisos.</p></div>
+        <div class="card"><div class="icono">😁</div><h3>Rehabilitación oral</h3><p>Tratamientos para recuperar la función y la estética de tu sonrisa.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sedes" class="alt">
+    <div class="wrap">
+      <h2>Nuestras sedes</h2>
+      <p class="sub">Dos sedes en Fusagasugá, Cundinamarca.</p>
+      <div class="grid">
+        <div class="card sede">
+          <h3>📍 Sede Av. Palmas</h3>
+          <p>Calle 8 # 21-45, Fusagasugá</p>
+          <iframe loading="lazy" title="Mapa Sede Av. Palmas" src="https://maps.google.com/maps?q=Calle%208%20%2321-45%2C%20Fusagas%C3%BAg%C3%A1%2C%20Cundinamarca&output=embed"></iframe>
+          <a class="link" href="https://www.google.com/maps/search/?api=1&query=Calle+8+%2321-45+Fusagasug%C3%A1" target="_blank" rel="noopener">Cómo llegar →</a>
+        </div>
+        <div class="card sede">
+          <h3>📍 Sede Centro</h3>
+          <p>Carrera 8 # 9-35, Fusagasugá</p>
+          <iframe loading="lazy" title="Mapa Sede Centro" src="https://maps.google.com/maps?q=Carrera%208%20%239-35%2C%20Fusagas%C3%BAg%C3%A1%2C%20Cundinamarca&output=embed"></iframe>
+          <a class="link" href="https://www.google.com/maps/search/?api=1&query=Carrera+8+%239-35+Fusagasug%C3%A1" target="_blank" rel="noopener">Cómo llegar →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="contacto">
+    <div class="wrap">
+      <h2>Agenda tu cita</h2>
+      <p class="sub">Escríbenos o llámanos, con gusto te atendemos.</p>
+      <div class="botones">
+        <a class="btn btn-wa" href="https://wa.me/573115989252" target="_blank" rel="noopener">WhatsApp 311 598 9252</a>
+        <a class="btn btn-sec" href="tel:+573160650500">Llamar 316 065 0500</a>
+        <a class="btn btn-sec" href="https://www.instagram.com/penaloza__odontologos/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <span>© Peñaloza Odontólogos · Fusagasugá, Cundinamarca</span>
+      <span>@penaloza__odontologos</span>
+    </div>
+  </footer>
+</body>
+</html>
